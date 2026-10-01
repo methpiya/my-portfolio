@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Portfolio | นางสาวเมธปิยา เคนบุบผา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js สำหรับทำกราฟ -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Sarabun', sans-serif; }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-graduation-cap text-2xl text-yellow-400"></i>
+                <h1 class="text-xl font-bold">วิทยาลัยสารพัดช่างนครหลวง</h1>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm">
+                <a href="#profile" class="hover:text-yellow-400 transition">ข้อมูลส่วนตัว</a>
+                <a href="#dashboard" class="hover:text-yellow-400 transition">แดชบอร์ดผลการปฏิบัติงาน</a>
+                <a href="#section2" class="hover:text-yellow-400 transition">ผลสัมฤทธิ์ของงาน</a>
+                <a href="#section3" class="hover:text-yellow-400 transition">พฤติกรรมการปฏิบัติงาน</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section 1: Profile (ข้อมูลผู้ขอรับการประเมิน) -->
+    <section id="profile" class="max-w-6xl mx-auto px-4 py-10">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col md:flex-row">
+            <div class="bg-blue-50 md:w-1/3 p-8 flex flex-col items-center justify-center border-r border-gray-100">
+                <div class="w-32 h-32 bg-gray-300 rounded-full mb-4 border-4 border-white shadow-md flex items-center justify-center text-gray-500">
+                    <i class="fa-solid fa-user text-4xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-blue-900 text-center">นางสาวเมธปิยา เคนบุบผา</h2>
+                <p class="text-blue-600 font-medium mt-1">ตำแหน่ง พนักงานราชการ</p>
+            </div>
+            <div class="p-8 md:w-2/3">
+                <h3 class="text-lg font-semibold border-b pb-2 mb-4 text-gray-700">ข้อมูลการประเมิน</h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li><i class="fa-regular fa-calendar-check w-6 text-blue-500"></i> <strong>รอบการประเมิน:</strong> ครั้งที่ 2 (1 เม.ย. - 30 ก.ย. 2569)</li>
+                    <li><i class="fa-solid fa-building w-6 text-blue-500"></i> <strong>สังกัด:</strong> สำนักงานคณะกรรมการการอาชีวศึกษา กระทรวงศึกษาธิการ</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Dashboard (Merged from dashboard_mockup.html) -->
+    <section id="dashboard" class="max-w-6xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-chart-pie"></i> ส่วนที่ 2 : แดชบอร์ดสรุปผลการปฏิบัติงาน - งานทะเบียนรับส่งเอกสาร
+        </h2>
+        
+        <!-- Section: Key Performance Indicators (KPIs) -->
+        <div class="mb-6">
+            <h3 class="text-lg font-semibold text-slate-700 border-l-4 border-blue-600 pl-3 mb-4">ภาพรวมการดำเนินงาน (Key Metrics)</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- KPI 1: Total Documents -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 card transition duration-300">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium mb-1">จำนวนเอกสารทั้งหมด</p>
+                            <h3 class="text-3xl font-bold text-blue-600">86</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                            <i class="fa-solid fa-folder-open text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4"><i class="fa-solid fa-arrow-trend-up text-green-500"></i> ดำเนินการแล้วเสร็จ 100%</p>
+                </div>
+
+                <!-- KPI 2: Incoming Documents -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 card transition duration-300">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium mb-1">หนังสือเข้า</p>
+                            <h3 class="text-3xl font-bold text-sky-500">79</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-sky-100 rounded-full flex items-center justify-center text-sky-500">
+                            <i class="fa-solid fa-inbox text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4">ตรวจสอบและจัดสรรเรียบร้อย</p>
+                </div>
+
+                <!-- KPI 3: Internal Memos -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 card transition duration-300">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium mb-1">บันทึกข้อความภายใน</p>
+                            <h3 class="text-3xl font-bold text-emerald-600">7</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600">
+                            <i class="fa-solid fa-file-signature text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4">การประสานงานภายในหน่วยงาน</p>
+                </div>
+
+                <!-- KPI 4: Urgent Documents -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 card transition duration-300">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-slate-500 font-medium mb-1">เอกสารด่วนที่สุด</p>
+                            <h3 class="text-3xl font-bold text-red-500">14</h3>
+                        </div>
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center text-red-500">
+                            <i class="fa-solid fa-bolt text-xl"></i>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-400 mt-4">ตอบสนองรวดเร็วตามกำหนดเวลา</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section: Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            
+            <!-- Chart 1: Document Types -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+                <h3 class="text-md font-semibold text-slate-700 mb-4 border-b pb-2">สัดส่วนประเภทเอกสาร</h3>
+                <div class="relative h-64 w-full flex justify-center">
+                    <canvas id="typeChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Urgency Levels -->
+            <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100">
+                <h3 class="text-md font-semibold text-slate-700 mb-4 border-b pb-2">ระดับความเร็วของเอกสาร</h3>
+                <div class="relative h-64 w-full flex justify-center">
+                    <canvas id="urgencyChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Assessment Note -->
+        <div class="bg-blue-50 rounded-xl p-6 border border-blue-100">
+            <h3 class="text-blue-800 font-bold mb-2"><i class="fa-solid fa-comment-dots text-blue-500 mr-2"></i>สรุปความเห็นของผู้รับการประเมิน</h3>
+            <p class="text-sm text-blue-900 leading-relaxed">
+                ในรอบการประเมินนี้ ข้าพเจ้าได้ดำเนินการจัดการเอกสารในระบบทะเบียนรับส่งเอกสารจำนวนทั้งสิ้น <strong>86</strong> ฉบับ โดยแบ่งเป็นหนังสือเข้าจำนวน 79 ฉบับ และบันทึกข้อความภายใน 7 ฉบับ ข้าพเจ้าได้ให้ความสำคัญกับการบริหารจัดการเวลาและลำดับความสำคัญของงานอย่างมีประสิทธิภาพ โดยเฉพาะการเร่งดำเนินการ <strong>เอกสารด่วนที่สุดจำนวน 14 ฉบับ</strong> ให้แล้วเสร็จตามกำหนดเวลาอย่างรวดเร็วและถูกต้องตามระเบียบงานสารบรรณ ผลการปฏิบัติงานดังกล่าวแสดงให้เห็นถึงความมุ่งมั่นในการสนับสนุนการบริหารงานของสถานศึกษาและความละเอียดรอบคอบในการปฏิบัติหน้าที่
+            </p>
+        </div>
+    </section>
+
+    <!-- Section 3: ผลสัมฤทธิ์ของงาน (Original Section 2) -->
+    <section id="section2" class="max-w-6xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-briefcase"></i> ส่วนที่ 3 : สรุปผลการประเมินผลสัมฤทธิ์ของงานอื่นๆ
+        </h2>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- 1. หน้าที่ประจำ -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-4 text-xl">1</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">หน้าที่ประจำ</h3>
+                <p class="text-sm text-gray-600 leading-relaxed bg-gray-50 p-3 rounded-lg border-l-4 border-blue-400">
+                    ปฏิบัติงานตามคำสั่งไปราชการ: เข้าร่วมการอบรมเชิงปฏิบัติการการใช้งานระบบเอกสารอิเล็กทรอนิกส์ (e-Office) ภายใต้บริการคลาวด์กลางภาครัฐ (GDCC) ประจำปี พ.ศ. 2569 ในฐานะตัวแทนของวิทยาลัย เมื่อวันที่ 17 กันยายน 2569
+                </p>
+                <a href="https://drive.google.com/file/d/1rAr680n5G-KjO_Sv6GlPJAbfN8QJoFqo/view?usp=sharing" target="_blank" class="mt-4 inline-block text-sm text-blue-600 hover:underline"><i class="fa-solid fa-paperclip"></i> แนบไฟล์ประกอบ</a>
+            </div>
+
+            <!-- 2. หน้าที่พิเศษ -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-4 text-xl">2</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">หน้าที่พิเศษ</h3>
+                <p class="text-sm text-gray-500 italic">นอกเหนือจากหน้าที่ประจำที่ได้รับมอบหมายแล้ว ได้มีการปฏิบัติงานพิเศษ...</p>
+                <div class="mt-3 border-2 border-dashed border-gray-200 rounded-lg h-24 flex items-center justify-center text-gray-400 text-sm">
+                    พื้นที่อัปโหลดรูปภาพ / ผลงาน
+                </div>
+            </div>
+
+            <!-- 3. หน้าที่อื่น ๆ -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+                <div class="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-4 text-xl">3</div>
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">หน้าที่อื่น ๆ (4 โครงการ)</h3>
+                <ul class="text-sm text-gray-600 space-y-2 list-disc pl-4">
+                    <li>โครงการป้องกันการทุจริตฯ (ITA)</li>
+                    <li>อบรมหลักสูตรวิชาชีพระยะสั้น ณ โลตัส ศาลายา</li>
+                    <li>โครงการรณรงค์ป้องกันปัญหายาเสพติด</li>
+                    <li>อบรมหลักสูตรประดิษฐ์ดอกไม้จันทน์</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: พฤติกรรมการปฏิบัติงาน (Original Section 3) -->
+    <section id="section3" class="max-w-6xl mx-auto px-4 py-8 mb-12">
+        <h2 class="text-2xl font-bold text-blue-900 mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-star"></i> ส่วนที่ 4 : สรุปผลการประเมินพฤติกรรมการปฏิบัติงาน
+        </h2>
+
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden divide-y divide-gray-100">
+            <!-- Item 1 -->
+            <div class="p-5 hover:bg-gray-50 transition">
+                <h4 class="font-semibold text-gray-800">1. การมุ่งผลสัมฤทธิ์</h4>
+                <p class="text-sm text-gray-600 mt-1">มีการปฏิบัติงานตามคำสั่งที่ได้รับมอบหมายอย่างครบถ้วน เช่น การเป็นตัวแทนไปราชการอบรม e-Office (GDCC) และเข้าร่วมกิจกรรมสนับสนุนโครงการของวิทยาลัยฯ 4 ครั้ง</p>
+            </div>
+            <!-- Item 2 -->
+            <div class="p-5 hover:bg-gray-50 transition">
+                <h4 class="font-semibold text-gray-800">2. การบริการที่ดี</h4>
+                <p class="text-sm text-gray-600 mt-1">ปฎิบัติตามงานที่ได้รับมอบหมายของวิทยาลัยต่อเนื่อง</p>
+            </div>
+            <!-- Item 3 -->
+            <div class="p-5 hover:bg-gray-50 transition">
+                <h4 class="font-semibold text-gray-800">3. การสั่งสมความเชี่ยวชาญในงานอาชีพ</h4>
+                <p class="text-sm text-gray-600 mt-1">เข้าร่วมการอบรมวิชาชีพและระบบปฏิบัติการ 2 ครั้ง ได้แก่ การใช้งานระบบ e-Office และหลักสูตรประดิษฐ์ดอกไม้จันทน์</p>
+            </div>
+            <!-- Item 4 -->
+            <div class="p-5 hover:bg-gray-50 transition">
+                <h4 class="font-semibold text-gray-800">4. การยึดมั่นในความถูกต้องชอบธรรมและจริยธรรม</h4>
+                <p class="text-sm text-gray-600 mt-1">ยึดมั่นในระเบียบวินัยของทางราชการ ดำเนินการทุกขั้นตอนด้วยความถูกต้อง พร้อมทั้งรายงานผลการปฏิบัติงานต่อผู้บริหารรับทราบทุกครั้ง</p>
+            </div>
+            <!-- Item 5 -->
+            <div class="p-5 hover:bg-gray-50 transition">
+                <h4 class="font-semibold text-gray-800">5. การทำงานเป็นทีม</h4>
+                <p class="text-sm text-gray-600 mt-1">ให้ความร่วมมือในโครงการ ITA, โครงการป้องกันปัญหายาเสพติด และการออกหน่วยจัดอบรมวิชาชีพระยะสั้น</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+        <p>เอกสารประกอบการประเมินผลการปฏิบัติงาน - นางสาวเมธปิยา เคนบุบผา</p>
+    </footer>
+
+    <!-- Scripts for Charts -->
+    <script>
+        // Chart 1: สัดส่วนประเภทเอกสาร (Doughnut Chart)
+        const ctxType = document.getElementById('typeChart').getContext('2d');
+        new Chart(ctxType, {
+            type: 'doughnut',
+            data: {
+                labels: ['หนังสือเข้า', 'บันทึกข้อความภายใน'],
+                datasets: [{
+                    data: [79, 7],
+                    backgroundColor: [
+                        '#3b82f6', // blue-500
+                        '#10b981', // emerald-500
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { font: { family: 'Sarabun' } }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: ระดับความเร็วของเอกสาร (Bar Chart)
+        const ctxUrgency = document.getElementById('urgencyChart').getContext('2d');
+        new Chart(ctxUrgency, {
+            type: 'bar',
+            data: {
+                labels: ['ปกติ', 'ด่วนที่สุด'],
+                datasets: [{
+                    label: 'จำนวน (ฉบับ)',
+                    data: [72, 14],
+                    backgroundColor: [
+                        '#94a3b8', // slate-400
+                        '#ef4444'  // red-500
+                    ],
+                    borderRadius: 6,
+                    barPercentage: 0.5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        titleFont: { family: 'Sarabun' },
+                        bodyFont: { family: 'Sarabun' }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: { font: { family: 'Sarabun' } }
+                    },
+                    x: {
+                        ticks: { font: { family: 'Sarabun' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
